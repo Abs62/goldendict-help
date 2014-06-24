@@ -1,0 +1,12 @@
+help/*.*
+release/
+debug/
+*/html
+
+Makefile
+Makefile.Debug
+Makefile.Release
+
+gdhelp.pro.user
+gdhelp.pro.user.*
+

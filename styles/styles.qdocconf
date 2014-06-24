@@ -1,0 +1,8 @@
+HTML.stylesheets = "offline.css"
+
+HTML.headerstyles = \
+    " <link rel=\"stylesheet\" type=\"text/css\" href=\"style/offline.css\" />\n"
+
+HTML.endheader = \
+    "</head>\n" \
+    "<body>\n"

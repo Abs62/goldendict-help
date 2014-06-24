@@ -1,0 +1,813 @@
+﻿/*!
+\title _Reference
+\page index.html
+\indexpage _Reference
+\keyword Content
+\list
+	\o \l {gdabout.html}{01 About GoldenDict}
+	\o \l {formats.html}{02 Supported dictionary formats}
+	\o \l {portable.html}{03 Portable mode}
+	\o \l {popup.html}{04 Popup window}
+	\o \l {dicts.html}{05 Manage dictionaries}
+	\o \l {options.html}{06 Preferences}
+	\o \l {toolbar.html}{07 Toolbar}
+	\o \l {headwords.html}{08 Dictionary headwords}
+	\o \l {fulltextsearch.html}{09 Full-text search}
+	\o \l {debug.html}{10 Debug mode}
+	\o \l {cssfiles.html}{11 User styles}
+	\o \l {hotkeys.html}{12 Shortcuts}
+\endlist
+*/
+
+/*!
+\page gdabout.html
+\title 01 About GoldenDict
+\image main_window.png
+\indexpage _Reference
+\target about_goldendict
+
+GoldenDict is cross-platform multi-format Qt-based dictionary lookup program. Now GoldenDict works under Linux/X11, Windows (Windows XP and later) and MacOS X.
+GoldenDict supports \l {formats.html#formats}{local dictionaries}, \l {formats.html#formats}{network resources} and some \l {formats.html#formats}{other resources}.
+*/
+
+/*!
+\page formats.html
+\title 02 Supported dictionary formats
+\target formats
+
+\chapter Local dictionaries
+
+\list
+	\o Babylon dictionaries (.BGL), complete with images and resources
+	\o \l {stardict_features}{StarDict dictionaries} (.ifo/.dict./.idx/.syn)
+	\o \l {xdxf_features}{DictD dictionaries} (.index/.dict(.dz))
+	\o \l {dsl_features}{ABBYY Lingvo source files} (.dsl(.dz)), together with abbreviations.
+	\o \l {xdxf_features}{Xdxf dictionaries} (.xdxf(.dz))
+	\o AardDictionary dictionaries (.aar)
+	\o SDictionary dictionaries (.dct)
+	\o Zim dictionaries (.zim)
+	\o MDict dictionaries (.mdx/.mdd)
+	\o Epwing dictionaries
+	\o \l {lsa_features}{ABBYY Lingvo sound archives} (.lsa/.dat)
+	\o \l {sounddirs_features}{Sound files in separate folders}
+	\o \l {zips_features}{Zips sound packs} (.zips)
+\endlist
+	
+\chapter Network resources
+
+\list
+	\o Wikipedia and other Wiki-resources, which use Wiki engine.
+	\o Any sites which allow set target word in address line
+	\o DICT servers
+	\o Forvo site with pronunciations
+\endlist
+
+\chapter Other resources
+
+\list
+	\o External programs
+	\o Text-to-speech engines (under Windows and MacOS)
+\endlist
+
+\chapter Local dictionary features
+\target stardict_features
+\section1 1. Stardict
+Main file of Stardict dictionary (.dict) can be compressed by Dictzip program to reduce its size.
+
+Additional dictionary resources (images, style sheets, etc.) placed in "res" folder also can be compressed into zip archive. 
+This archive must be named "res.zip" and placed beside other dictionary files or inside "res" folder.
+
+Size of such archive must not exceed 4 GB.
+
+\target dsl_features
+\section1 2. ABBYY Lingvo
+
+Main file of ABBYY Lingvo dictionary (.dsl) can be compressed by Dictzip program to reduce its size.
+
+Additional dictionary resources (images, sound files, etc.) also can be compressed into zip archive. 
+This archive must be named on main dictionary file name (include extension) with adding ".files.zip" and placed beside other dictionary files. If main file of your dictionary, for example, named 
+"My_best_dictionary.dsl" therefore archive with resources must be named "My_best_dictionary.dsl.files.zip".
+
+Size of such archive must not exceed 4 GB.
+
+\target xdxf_features
+\section1 3. DictD, Xdxf
+Main file of DictD dictionary (.dict) or Xdxf dictionary (.xdxf) can be compressed by Dictzip program to reduce its size.
+
+\target lsa_features
+\section1 4. ABBYY Lingvo sound archives
+
+ABBYY Lingvo sound archives are set of sound files packed into one file of some specific format.
+These files can be called directly from matches list or from dictionary articles.
+
+\target sounddirs_features
+\section1 5. Sound files in separate folders
+
+The separate folder with sound files can be added into GoldenDict dictionaries list.
+GoldenDict will handle this folders like ABBYY Lingvo sound archives
+(inapplicable in \l{portable.html}{portable mode}).
+
+\target zips_features
+\section1 6. Zips sound packs
+
+Zips sound pack is zip archive with extension ".zips" contains set of sound files. To create suck pack it needs to compress sound files into zip archive and change extension of this archive to ".zips".
+GoldenDict will handle such sound packs like ABBYY Lingvo sound archives.
+
+Zips file size must not exceed 4 GB.
+
+\section1 7. Individual dictionary icons
+
+Every local dictionary can have individual icon. BMP, PNG, JPG or ICO files can be used for this icon.
+
+For Babylon, StarDict, DictD, ABBYY Lingvo, AardDictionary, SDictionary, Zim, MDict, Lsa, Zips dictionaries such graphics file must be named by main dictionary file name
+and places beside one. That is if main file of your dictionary, for example, named "My_best_dictionary.dsl" therefore icon file must be named "My_best_dictionary.bmp" (.png, .jpg etc.).
+
+For Xdxf dictionaries icon file must be named "icon16.png" (for 16х16 images) or "icon32.png" (for 32х32 images) and placed into dictionary folder.
+
+For Epwing dictionaries icon file must be named by name of folder with dictionary data beside "catalogs" file (a few folders can be presented, every folder is separate dictionary) and placed beside "catalogs" file.
+
+If individual icon is not presented the default icon for this type of dictionaries will be used.
+
+\target common_features
+\section1 8. General notes
+
+At every launch GoldenDict scan folders with dictionaries to create dictionaries list. The more files in these folder is the more time for scanning.
+Therefore it is recommended to compress dictionary resources into zip archives and to use Zips sound packs instead of sound files in separate folders.
+*/
+
+/*!
+\page portable.html
+\title 03 Portable mode
+
+Usually GoldenDict store all program settings and dictionary indexes in home folder of current user. In portable mode program settings and dictionary indexes stored in "portable" folder
+beside the main program file. This mode suit for using of GoldenDict with common settings directly from flash drive on different computers.
+
+To turn on portable mode it needs only create "portable" folder beside the main program file. If such folder exists GoldenDict will launched in portable mode.
+
+In portable mode GoldenDict works with some limitations:
+\list
+	\o You can't select folders with dictionaries. All dictionaries should be placed in "contents" folder beside the main program file and/or its subfolders.
+	\o You can't use sound files in separate folders.
+\endlist
+*/
+
+/*!
+\page popup.html
+\title 04 Popup window
+Besides main GoldenDict window with dictionary articles the small popup window can be used for rapid translation. This window can be called from other applications without switching to main GoldenDict window.
+It will be popup beside mouse cursor and will be automatically closed when cursor move away from it (if window for some reason don't close just click it and press "Esc" key).
+If popup window is enabled it will be shown in next cases:
+\list
+\o a) when \l{options.html#6.3 Hotkeys}{hotkey} was pressed;
+\o b) (under Windows and MacOS only) when mouse cursor placed over target word and scanning is turned on (scanning turned on/off by \inlineimage wizard.png
+button on GoldenDict toolbar or via context menu of tray icon);
+
+Note: in some applications scanning may don't work
+\o c) (under Linux X11 only) when target word was selected and scanning is turned on;
+\o d) when clipboard was changed and scanning is turned on. To use this mode under Windows and MacOS it needs to turn on it \l{options.html#6.8 Options adjustable via config file}{via config file}.
+\endlist
+
+Popup window controls
+\image popup.png
+1 - combobox to choose current dictionaries group
+
+2 - search line with dropdown matches list
+
+3, 4 - navigation buttons "Forward"/"Backward"
+
+5 - pronunciation button. When it pressed the first pronunciation from articles will be played.
+
+6 - button to transfer word to main window. When it pressed the main GoldenDict window will be activated and translated word will be placed into it search line.
+
+7 - turn on/off dictionaries bar button. When it pressed the vertical toolbar with dictionary icons shown at right side of popup window. To exclude dictionary from search you can just release button with it icon
+on this toolbar. If dictionary bar is turned off such dictionary muting don't work.
+
+8 - pin button. When it pressed the popup window transform to ordinary application window and don't close when cursor moved away from it.
+In this mode you can resize window as you want. The new size will be preserved for next launch of GoldenDict.
+*/
+
+/*!
+\page dicts.html
+\title 05 Manage dictionaries
+\keyword Manage dictionaries
+Dictionaries addition dialog can be called via menu "Edit" -> "Dictionaries..." or by hotkey F3. It contains several tabs.
+
+\chapter 5.1 Sources
+
+Here you can add dictionaries of different types. This tab contains some more tabs.
+
+\section1 5.1.1 "Files" tab
+\image dicts1_1.png
+Here you can add local dictionaries. It needs to set folder with dictionaries by "Add" button and set "Recursive" checkbox if this folder contains some more folders with dictionaries.
+GoldenDict will scan these folders (by pressing button "Rescan now", "Apply" or "OK") and add found dictionaries into dictionaries list.
+"Rescan" button start forced scan of all folders in list. It is necessary if some dictionary was added to these folders when GoldenDict works. Buttons "Apply" and "OK" start rescan only if folders list was changed.
+
+"Remove" button remove selected folder from list.
+
+\section1 5.1.2 "Sound dirs" tab
+\image dicts1_2.png
+Here you can add sound files in separate folders. To add such folder it needs to set folder by "Add" button. In the "Name" column you can set name with which this folder will be added to dictionaries list.
+In the "Icon" column you can set custom icon file for this sound files set. If you add icon file name without path GoldenDict will search this file in configuration folder. 
+
+\section1 5.1.3 "Morphology" tab
+\image dicts1_3.png
+Here you can turn on/off morphology dictionaries. Such dictionaries in Hunspell format (.aff + .dic) should be placed into "content/morphology" subfolder of GoldenDict folder. GoldenDict scan this folder
+and create list of available dictionaries. To turn on dictionary just set mark in corresponding column.
+
+\section1 5.1.4 "Wikipedia" tab
+\image dicts1_4.png
+
+Here you can add web-sites which uses Wiki engine. To add such site you should set it url, name for dictionaries list and set mark in "Enabled" column. In the "Icon" column you can set custom icon for this site.
+If you add icon file name without path GoldenDict will search this file in configuration folder.
+
+\section1 5.1.5 "Websites" tab
+\image dicts1_5.png
+
+Here you can add any website which allow to set target word in url. To add such site you should set it url with target word template, name for dictionaries list and set mark in "Enabled" column. 
+In the "Icon" column you can set custom icon for this site. If you add icon file name without path GoldenDict will search this file in configuration folder.
+
+Target word can be inserted into url in next encodings::
+\table
+\header
+	\o Target word template
+	\o Encoding
+\row
+	\o %GDWORD%
+	\o UTF-8
+\row
+	\o %GD1251%
+	\o Windows-1251
+\row
+	\o %GDISO1% ... %GDISO16%
+	\o ISO 8859-1 ... ISO 8859-16 respectively
+\row
+	\o %GDBIG5%
+	\o Big-5
+\row
+	\o %GDBIG5HKSCS%
+	\o Big5-HKSCS
+\row
+	\o %GDGBK%
+	\o GBK and GB 18030
+\row
+	\o %GDSHIFTJIS%
+	\o Shift-JIS
+\endtable
+
+\section1 5.1.6 "DICT servers" tab
+\image dicts1_6.png
+
+Here you can add servers which uses DICT protocol. To add such server you should set its url, name for dictionaries list, server bases list, search strategies list and set mark in "Enabled" column.
+If bases list is empty GoldenDict will use all server bases. If search strategies list is empty GoldenDict will use "prefix" strategy (comparing the first part of the word).
+
+In the "Icon" column you can set custom icon for every server. If you add icon file name without path GoldenDict will search this file in configuration folder.
+
+\section1 5.1.7 "Programs" tab
+\image dicts1_7.png
+Here you can add external applications. To add such application you should set command line for its launch, name for dictionaries list and application type. The %GDWORD% template in command line
+will be replaced by word from search line. If command line don't contains such template the word will be fed into standard input stream in 8-bit current locale encoding.
+
+Allowed application types:
+\table
+\header
+	\o Application type
+	\o The purpose of application
+\row
+	\o Audio
+	\o Application play sound.
+\row
+	\o Text
+	\o Application output some plain text in 8-bit current locale encoding into standard output stream. This text will be shown as separate article.
+\row
+	\o Html
+	\o Application output some html code into standard output stream. This code will be shown as separate article.
+\row
+	\o Prefix
+	\o Application output some word list into standard output stream. This list will be added in common matches list.
+\endtable
+In the "Icon" column you can set custom icon for every application. If you add icon file name without path GoldenDict will search this file in configuration folder.
+
+\section1 5.1.8 "Forvo" tab
+\image dicts1_8.png
+\keyword Forvo
+
+Here you can tune the parameters for connection to Forvo server - base of live pronunciations. To use Forvo service you should \l {http://api.forvo.com/key/}{obtain user key}
+and place it into "API Key" line. Also you should to set \l {http://www.forvo.com/languages-codes/}{language codes} in "Language codes" line.
+
+\section1 5.1.9 "Transliteration" tab
+\image dicts1_9.png
+
+Here you can add transliteration algorithms. To add algorithm into dictionaries list just set mark beside it. When such dictionary added into current dictionaries group GoldenDict will search word in the input line
+as well as result of its handling by corresponding transliteration algorithm.
+
+\section1 5.1.10 "Text To Speech" tab (only under Windows and MacOS)
+\image dicts1_10.png
+
+Here you can add text-to-speech engines installed in system. List of such engines shown in combobox "Available voice engines". To add engine select it in list and press "Add" button.
+For every engine you can tune speech volume and rate by corresponding sliders.
+
+You can press "Preview" button to send to selected engine string from line "Text to be previewed".
+
+In the "Icon" column you can set custom icon for every engine. If you add icon file name without path GoldenDict will search this file in configuration folder.
+
+\chapter 5.2 Dictionaries
+
+Here you can sort common dictionaries list. It can be completed manually by dragging dictionaries by mouse as well as automatically via context menu.
+Also here you can see dictionary parameters. The dictionaries filter line allows filter list by dictionary name.
+
+Via context menu of dictionaries list you can sort this list. Sorting can be completed it two modes:
+
+\table
+\row
+	\o Sort by name
+	\o Alphabetical sorting by dictionary name.
+\row
+	\o Sort by language
+	\o Alphabetical sorting by dictionary source language, target language and name. 
+\endtable
+For some local dictionaries you also can call \l{headwords.html}{dictionary headwords dialog}.
+
+To remove dictionary from list without deleting it just drag this dictionary into "Inactive (disabled) dictionaries" window.
+
+\chapter 5.3 Groups
+
+Here you can create and edit dictionary groups. To add dictionary into group just drag it into groups window, to remove it drag it back to dictionaries list. Also you can press "Auto groups button" to automatically create groups for all presented in
+dictionaries list language directions. Via context menu of such automatically created groups you can execute additional dictionaries grouping by source or target language and combine dictionaries in more large groups.
+
+Via "Group icon" list box you can select icon for current group. This icon will be shown beside group name in groups list.
+
+In "Shortcut" line you can set hotkey to select this group. Just select this line and press shortcut keys.
+
+Buttons:
+\table
+\row
+	\o "Add group"
+	\o Create new group
+\row
+	\o "Auto groups"
+	\o Automatic grouping by language directions
+\row
+	\o "Rename group"
+	\o Rename current group
+\row
+	\o "Remove group"
+	\o Remove current group
+\row
+	\o "Remove all groups"
+	\o Remove all groups
+\endtable
+*/
+
+/*!
+\page options.html
+\keyword Preferences
+\title 06 Preferences
+GoldenDict preferences dialog can be called via menu "Edit" -> "Preferences..." or by shortcut "F4". In contains several tabs.
+
+\chapter 6.1 Interface
+
+Here you can tune GoldenDict interface.
+\image opt1.png
+\bold{Open new tabs in background}. If this option is set the current tab still active when you open new tab. Else you will be switched to new tab immediately.
+
+\bold{Open new tabs after the current one}. If this option is set the new tab will be placed after current one else after last one.
+
+\bold{Hide single tab}. If this option is set the tab bar will be hidden if the only tab is opened.
+
+\bold{Ctrl-Tab navigate tabs in MRU order}. If this option is set the Ctrl+Tab hotkey will switch tabs as ones was used else as ones placed in the tab bar.
+
+\bold{Enable system tray icon}. If this option is set GoldenDict will create icon in the system tray at it start.
+
+\bold{Start to system tray}. If this option is set GoldenDict will be started in minimized to system tray state.
+
+\bold{Close to system tray}. If this option is set GoldenDict will minimize to system tray else to system taskbar.
+
+\bold{Start with system}. If this option is set GoldenDict will be started automatically after operation system start.
+
+\bold{Double-click translates the word clicked}. If this option is set the double click on word calls it translation. If Ctrl or Shift key is pressed for translation will be created a new tab.
+
+\bold{Select word by single click}. If this option is set the single click on word will select it.
+
+\bold{Context menu dictionaries limit}. This option set the maximum number of dictionaries in context menus.
+
+\bold{Interface language}. This option select the language for GoldenDict interface. After changing of language GoldenDict should be restarted.
+
+\bold{Display style}. This option select one from internal interface styles.
+
+\bold{Add-on style}. This option shows when the folder "styles" inside GoldenDict configuration folder contains at least one folder with user style. Such user style can include
+the "qt-style.css" file (interface tuning), "article-style.css" file (articles presentation tuning) and some extra files (icons, fonts etc.).
+
+Note: To open the GoldenDict configuration folder you can use "Help" -> "Configuration Folder" menu command.
+
+\chapter 6.2 Scan popup
+
+\image opt2.png
+
+\bold{Enable \l{popup.html}{scan popup functionality}}. If this option is set the \inlineimage wizard.png
+button will be shown on toolbar. This button turn on/off scanning of word under mouse cursor (only under Windows and MacOS), text selection (only under Linux X11) and clipboard changing.
+
+Note: This option don't affect \l{6.3 Hotkeys}{calling popup window by hotkey}.
+
+\bold{Start with scan popup turned on}. If this option is set the scanning mode will be turned on at GoldenDict start.
+
+\bold{Only show popup when all selected keys are kept pressed}. If this option is set the popup will not be shown until all selected keys are pressed.
+
+\bold{Keys may also be pressed afterwards, within ... sec}. This option set the maximum time after word selecting when selected in previous option keys should be pressed to call popup window (only under Linux X11).
+
+\bold{Send translated word to main window}. If this option is set the main GoldenDict window will be activated instead of popup window. The target word will be placed into search line of main window.
+
+\chapter 6.3 Hotkeys
+\image opt3.png
+Here you can set hotkeys to call popup window and/or to show/hide the main window. Just select corresponding line and press keys. These hotkeys are global and works from other applications.
+
+If hotkey contains two parts it first part transfer to other applications and can work in ones as separate hotkey. To correct work of this procedure under Windows 8 and later start GoldenDict
+with rights of administrator.
+
+\chapter 6.4 Audio
+Here you can set parameters for playback of sound files from dictionaries.
+\image opt4.png
+\bold{Auto-pronounce words in main window}. If this options is set the first found pronunciation will be automatically played after articles loading to main window. 
+
+\bold{Auto-pronounce words in scan popup}. If this options is set the first found pronunciation will be automatically played after articles loading to popup window. 
+
+\bold{Use internal player}. If this option is set the internal FFMpeg-based player will be used for playback.
+
+\bold{Use external program}. If this option is set the sound file to play will be transferred to specified application as command line parameter.
+
+\chapter 6.5 Network
+Here you can set GoldenDict network parameters.
+\image opt5.png
+\bold{Use proxy server}. If this option is set GoldenDict will use network connections via proxy server. You can use system proxy settings as well as set custom settings.
+
+\bold{Disallow loading content from other sites}. If this option is set GoldenDict will block access from loaded page to other sites.
+
+\bold{Enable web plugins}. This option allow GoldenDict to use NPAPI plugins installed in operation system to handle loaded pages.
+
+\bold{Don't identify GoldenDict in HTTP headers}. If this option is set GoldenDict will don't identify itself via HTTP headers. It usable if some website block requests from GoldenDict.
+
+\bold{Check for new program releases periodically}. If this option is set GoldenDict will periodically check the new release presence on goldendict.org site. Check interval is 2 days (or 2 hours if site now is inaccessible).
+
+\chapter 6.6 Full-text search
+Here you can set the full-text search parameters.
+\image opt6.png
+\bold{Allow full-text search for:} If this option is don't set the full-text search completely blocked. If it is set below you can select local dictionary typed for full-text search.
+
+\bold{Don't search in dictionaries containing more than ... articles} This option allow to turn off full-text search in huge dictionaries like local Wikipedia or Wiktionary. Such huge dictionaries
+requires long time and many resources to index and may don't index at all if no memory enough.
+
+\chapter 6.7 Advanced
+Here you can set some other GoldenDict parameters.
+\image opt7.png
+\bold{Scan popup extra technologies} (only under Windows). Here you can turn on/off additional technologies of retrieving word under mouse cursor in addition to classic technology with dll injecting and
+intercepting screen output functions. Such classic technology is not usable for many modern applications.
+\list
+	\o \bold{Use IAccessibleEx}. This option allows GoldenDict to ask other applications via IAccessibleEx interface. In order to this technology works well the corresponding interface
+must be implemented in target application. For example via such technology GoldenDict can interact with Internet Explorer 9 and later.
+	\o \bold{Use UIAutomation}. This option allows GoldenDict to ask other applications via UIAutomation interface. In order to this technology works well the corresponding interface
+must be implemented in target application. For example via such technology GoldenDict can interact with MS Visual Studio editor.
+	\o \bold{Use GoldenDict message}. This option allows GoldenDict to ask other applications by sending user message registered in Windows. In order to this technology works well
+a target application must can recognize such messages and reply to its. For example via such technology GoldenDict retrieve words from own article pages.
+\endlist
+\bold{History}. Here you can tune storing history of requests to dictionaries.
+\list
+	\o \bold{Store history}. If this option don't set GoldenDict will don't log requests to dictionaries at all.
+	\o \bold{Maximum history size}. Here you can set the maximum number of records in history. After the history size reach this value new records will replace oldest records.
+	\o \bold{Maximum history size}. Here you can set the maximum number of records in history. After the history size reach this value new records will replace oldest records.
+	\o \bold{Save every ... minutes}. Here you can set the interval of saving history to file. If interval set to 0 history will be saved only when program will be closed. If GoldenDict will
+crash all not saved history records will be lost.
+\endlist
+
+\bold{Articles}. Here you can set some options for articles presentation.
+\list
+	\o \bold{Expand optional parts}. This option affect dictionaries which mark some article areas as optional (now only ABBYY Lingvo .dsl dictionaries). If it is set these marks will be ignored
+and article will be shown completely. Else areas marked as optional will be hide and beside article header will be shown button \inlineimage expand_opt.png
+. When you press this button the hidden areas will be shown and button will be changed to \inlineimage collapse_opt.png
+. When you press this button the hidden areas will be hide again.
+	\o \bold{Collapse articles more than ... symbols}. If this option is set GoldenDict will automatically collapse more long articles. Such collapsed articles indicated by \inlineimage arrow.png
+icon in "From dictionary..." heading above article text. When you press this icon or header article will be expanded and icon will be changed to \inlineimage downarrow.png
+. When you press \inlineimage downarrow.png
+icon article will be collapsed.
+
+Note: If only one article have found it will not be collapsed regardless of it size.
+\endlist
+
+\chapter 6.8 Options adjustable via config file
+Some GoldenDict preferences can be changed only by manual editing of configuration file. This file have name "config" and located in GoldenDict configuration folder. You can
+find this folder via "Help" -> "Configuration Folder" menu command.
+\table
+\header
+	\o Parameter
+	\o Meaning
+\row
+	\o maxPictureWidth
+	\o This parameter set maximum image width in ABBYY Lingvo .dsl dictionaries. More width images will be resized to this width. Mouse click on such resized image will create new tab
+with full-size image. If this parameter is 0 no images will be resized.
+
+Default value: 0
+\row
+	\o maxHeadwordSize
+	\o This parameter set maximum headword length for ABBYY Lingvo .dsl dictionaries. More long headwords will be ignored while dictionary indexing.
+
+Default value: 256
+\row
+	\o trackClipboardChanges
+
+(only under Windows and MacOS)
+	\o This parameter turn on/off tracking of clipboard changing. If \l{popup.html}{popup window} is enabled and tracking is enabled the popup window will be shown when
+clipboard content have changed.
+
+Allowed values: 0 - tracking is off, 1 - tracking is on.
+
+Default value: 0
+\endtable
+Note: Before manual editing of the configuration file GoldenDict must be closed or all changes will be cancelled.
+*/
+
+/*!
+\page toolbar.html
+\title 07 Toolbar
+GoldenDict toolbar can contain next elements:
+\image toolbar.png
+\list
+	\o 1 - Forward/Backward navigation buttons;
+	\o 2 - Choose of dictionaries group for search;
+	\o 3 - Search line with dropdown matches list;
+	\o 4 - Turn on/off scanning button;
+	\o 5 - Playback of first pronunciation in found articles;
+	\o 6 - Font scale buttons;
+	\o 7 - Save article;
+	\o 8 - Print article;
+	\o 9 - Menu
+	\o 10 - Dictionaries bar.
+\endlist
+Elements 2 and 3 are presents in toolbar if search pane is disabled in "View" menu. Otherwise group list, search line and matches list combined in separate pane in main GoldenDict window.
+
+Search line 3 contains word which will be searched in current dictionaries group. The translation will be shown by pressing the "Enter" key or by choose variant from matches list.
+If Ctrl or Shift key has been pressed the new tab for translation will be created.
+
+The search line can contain wildcard symbols '?' (matches any one character), '*' (matches any characters number) or ranges of characters "[...]".
+To find characters '?', '*', '[' and ']' it should be escaped by backslash - '\\?', '\\*', '\\[', '\\]'.
+
+Note: The wildcard symbol at first position in word leads to full headwords list scanning and it may take a long time for huge dictionaries.
+
+The button 4 is presented in toolbar if the popup window is \l{options.html#6.2 Scan popup}{enabled in preferences}.
+
+The button 9 is presented in toolbar if the main menu is turned off via "View" menu.
+
+The dictionaries bar 10 contains icons (and names optionally) of all dictionaries from current dictionaries group. You can turn on/off search in these dictionaries by mouse click on dictionary icons.
+If button with icon is in pressed state a corresponding dictionary is included in search, otherwise one is excluded. If you click dictionary icon with Ctrl of Shift key pressed the all other dictionaries will be disabled.
+The next click on this icon with Shift key pressed restore the previous dictionaries bar state, click with Ctrl key pressed enable all dictionaries.
+
+Note: If dictionaries bar is disabled such dictionaries enabling/disabling is not available.
+*/
+
+/*!
+\page headwords.html
+\keyword Dictionary headwords
+\title 08 Dictionary headwords
+\image headwords.png
+GoldenDict allow to view the unique headwords list for local dictionary. The headwords dialog can be called via:
+\list
+	\o context menu of \l{dicts.html#5.2 Dictionaries}{dictionaries list};
+	\o context menu of icon on dictionaries bar in \l{toolbar.html}{GoldenDict toolbar};
+	\o context menu of dictionaries list in navigation pane.
+\endlist
+The filter line allow to filter dictionaries list to remain only necessary headwords. Such filtration can be completed in next modes:
+\table
+\header
+	\o Mode
+	\o Filtration type
+\row
+	\o Plain text
+	\o Headword contains string from filter line.
+\row
+	\o Wildcards
+	\o Headword matched to Unix-like template from filter line. Such template can contain wildcard symbols '?' (matches any one character), '*' (matches any characters number) or ranges of characters "[...]"
+To find characters '?', '*', '[' and ']' it should be escaped by backslash - '\\?', '\\*', '\\[', '\\]'.
+\row
+	\o RegExp
+	\o Headword matched to regular expression from filter line.
+\endtable
+If option "Auto apply" is turned on any changes in filter line will be applied to headwords list immediately. Otherwise you should press "Apply" button to apply changes.
+If dictionary contains more than 150000 headwords the "Auto apply" option is disabled.
+
+If option "Match case" is turned on the matches search will be completed in the case-sensitive mode, otherwise in case-insensitive mode.
+
+The "Export" button allow to export the filtered headwords list to text file.
+
+Press "Ctrl+N" shortcut if you want to switch focus to main GoldenDict window. Press "Ctrl+D" to switch focus from main window to headwords dialog.
+*/
+
+/*!
+\page fulltextsearch.html
+\title 09 Full-text search
+\keyword Full-text search
+The full-text search dialog can be called via menu "Search" or by pressing the "Ctrl+Shift+F" keys. Such search allow to search words and expressions not in dictionary headwords but in articles text of dictionaries
+from current dictionaries group.
+\image fts.png
+"Search" - line with expression to search.
+
+"Mode" - search mode. GoldenDict allow next modes:
+\list
+	\o "Whole words" - for every word contains more then 4 characters in search line the exact match will be found. The "Max distance between words" element define the maximum unmatched words number between matched words.
+It is the fastest search mode. The search line must contain at least one word from 4 or more characters.
+	\o "Plain text" - mode like "Whole words" but every word in search line can be treated as word fragment.
+	\o "Wildcards" - the search line contains a Unix-like template. Such template can contain wildcard symbols '?' (matches any one character), '*' (matches any characters number) or ranges of characters "[...]"
+To find characters '?', '*', '[' and ']' it should be escaped by backslash - '\\?', '\\*', '\\[', '\\]'.
+	\o "RegExp" - the search line contains a regular expression.
+\endlist
+"Max articles per dictionary" - the search in dictionary will be stopped when this articles number is found in that dictionary.
+
+"Match case" - if this option is turned on the matches search will be completed in the case-sensitive mode, otherwise in case-insensitive mode.
+
+"Available dictionaries in group" - here you can view how many dictionaries in current group are suitable for full-text search, how many dictionaries already indexed and how many dictionaries wait for indexing.
+
+"Now indexing" - this line show name of currently indexed dictionary (it is may be dictionary not from current group).
+
+The dictionary indexing for full-text search going on in background mode and started immediately after program start. It can take a long time and require many RAM.
+If RAM size is not enough to search the index dictionary the indexing process can crash. In such cases it is recommended to turn off indexing for huge dictionaries like Wikipedias or Wiktionaries.
+To find dictionary which can't be indexed start GoldenDict in \l{debug.html}{debug mode}.
+
+When you place mouse cursor over headword in results list the tooltip with dictionaries list contains such articles matched the search conditions will be shown.
+*/
+
+/*!
+\page debug.html
+\title 10 Debug mode
+To turn on debug mode launch GoldenDict with "--log-to-file" command line key. In this mode GoldenDict creates in configuration folder the "gd_log.txt" and store various warnings, errors and debug messages in it.
+If GoldenDict started without this key all messages will be output to console (under Linux and MacOS) or ignored (under Windows).
+*/
+
+/*!
+\page cssfiles.html
+\title 11 User styles
+To change of dictionary articles presentation you can create the file with styles which will be used while articles output. Such file must be named "article-style.css" and placed in GoldenDict
+configuration folder beside the "config" file. The "article-style.css" is just style sheet file wrote in accordance with standard html style sheet \l{http://www.w3.org/Style/CSS/}{rules}.
+To see a class names used in articles you can call inspector via article context menu.
+
+Also you can tune GoldenDict interface. To make it you should create the "qt-style.css" style sheet file in GoldenDict configuration folder beside the "config" file.
+The rules for Qt style sheets you can find \l{http://qt-project.org/doc/qt-4.8/stylesheet-syntax.html}{here}.
+
+The examples of "article-style.css" and "qt-style.css" files you can find in \l{https://github.com/goldendict/goldendict}{GoldenDict source code}.
+*/
+
+/*!
+\page hotkeys.html
+\title 12 Shortcuts
+Besides the \l{options.html#6.3 Hotkeys}{global hotkeys} GoldenDict also support a number of shortcut usable inside program.
+\table
+\header
+	\o Shortcut
+	\o Action
+\row
+	\o Alt++
+	\o Increase font size for matches list
+\row
+	\o Alt+–
+	\o Decrease font size for matches list
+\row
+	\o Alt+0
+	\o Restore default font size for matches list
+\row
+	\o Alt+Left, Backspace
+	\o (In main and popup windows) history navigation: show previous founded results
+\row
+	\o Alt+Right
+	\o (In main and popup windows) history navigation: show next founded results
+\row
+	\o Alt+Down
+	\o Jump to article from next dictionary
+\row
+	\o Alt+Up
+	\o Jump to article from previous dictionary
+\row
+	\o Alt+Enter, Ctrl+Enter
+	\o (Search line) Show translation in new tab
+\row
+	\o Alt+D, Ctrl+L
+	\o (In main and popup windows) go to search line
+\row
+	\o Alt+G
+	\o (In main and popup windows) choose dictionaries group from group list
+\row
+	\o Alt+S
+	\o (In main and popup windows) playback pronunciation for current word
+\row
+	\o Alt+W
+	\o (In popup window) transfer word from search line to main window
+\row
+	\o Alt+PgDown
+	\o (In main and popup windows) switch to next dictionaries group
+\row
+	\o Alt+PgUp
+	\o (In main and popup windows) switch to previous dictionaries group
+\row
+	\o Ctrl++
+	\o Increase articles font size
+\row
+	\o Ctrl+–
+	\o Decrease articles font size
+\row
+	\o Ctrl+0
+	\o Set default articles font size
+\row
+	\o Ctrl+MouseWheel
+	\o Increase/decrease articles font size
+\row
+	\o Ctrl+A
+	\o Select all articles in current page
+\row
+	\o Ctrl+C
+	\o Copy selected
+\row
+	\o Ctrl+D
+	\o Switch to dictionary headwords dialog (if it is open)
+\row
+	\o Ctrl+F4
+	\o (Main window) minimize to system tray
+\row
+	\o Ctrl+F5
+	\o Rescan dictionaries
+\row
+	\o Ctrl+F
+	\o (In main and popup windows) search in page / (In dictionaries dialog) go to filter line
+\row
+	\o Ctrl+H
+	\o Show/hide history
+\row
+	\o Ctrl+M
+	\o Show/hide main menu
+\row
+	\o Ctrl+N
+	\o (In dictionary headwords dialog and full-text search dialog) switch to main window
+\row
+	\o Ctrl+O
+	\o Above all windows
+\row
+	\o Ctrl+P
+	\o (In main window) print current article
+\row
+	\o Ctrl+Q
+	\o (In main window) close GoldenDict
+\row
+	\o Ctrl+R
+	\o Show/hide results pane
+\row
+	\o Ctrl+S
+	\o Show/hide search pane
+\row
+	\o Ctrl+T
+	\o (In main window) create new tab
+\row
+	\o Ctrl+W
+	\o (In main window) close current tab
+\row
+	\o Ctrl+PgDown
+	\o (In main window) switch to next tab
+\row
+	\o Ctrl+PgUp
+	\o (In main window) switch to previous tab
+\row
+	\o Ctrl+Tab
+	\o (In main window) switch to next tab (can be changed in \l{options.html#6.1 Interface}{preferences})
+\row
+	\o Ctrl+8, Ctrl+*
+	\o (In main and popup windows) expand/collapse optional areas for all articles
+\row
+	\o Ctrl+Shift+A
+	\o Select current article only
+\row
+	\o Ctrl+Shift+C
+	\o Copy selected as text
+\row
+	\o Ctrl+Shift+F
+	\o Open/switch to full-text search dialog
+\row
+	\o Ctrl+Shift+W
+	\o Close all tabs
+\row
+	\o Del
+	\o (History) delete select line
+\row
+	\o Enter
+	\o (In main window) go to search line
+\row
+	\o Esc
+	\o (In main window) go to search line (the action for Esc key can be changed in \l{options.html#6.1 Interface}{preferences}) / (in popup window) close popup window
+\row
+	\o F1
+	\o GoldenDict reference
+\row
+	\o F2
+	\o (In main window) save current page to html
+\row
+	\o F3
+	\o Dictionaries dialog
+\row
+	\o F4
+	\o GoldenDict preferences
+\row
+	\o F12
+	\o Inspector
+\endtable
+*/

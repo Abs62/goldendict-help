@@ -1,0 +1,23 @@
+﻿
+HTML.templatedir = ../styles
+include(../styles/styles.qdocconf)
+
+sourcedirs = .
+imagedirs = ./pictures
+outputdir = ./html
+sources.fileextensions="*.qdoc"
+naturallanguage = ru
+sourceencoding = UTF-8
+outputencoding = UTF-8
+
+project = GoldenDict
+description = GoldenDict Manual
+
+qhp.projects            = goldendict
+
+qhp.goldendict.file                = goldendict.qhp
+qhp.goldendict.namespace           = goldendict_ru
+qhp.goldendict.virtualFolder       = goldendict_ru
+qhp.goldendict.indexTitle          = Cправка GoldenDict
+qhp.goldendict.subprojects.common.title = Cправка
+qhp.goldendict.subprojects.common.indexTitle = Cправка
