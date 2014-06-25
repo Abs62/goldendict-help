@@ -394,6 +394,9 @@ Here you can tune GoldenDict interface.
 
 \bold{Display style}. This option select one from internal interface styles.
 
+\bold{Help language}. This option select the language for GoldenDict reference. "Default" means the interface language will be used as reference language.
+If no such reference exists the English reference will be used.
+
 \bold{Add-on style}. This option shows when the folder "styles" inside GoldenDict configuration folder contains at least one folder with user style. Such user style can include
 the "qt-style.css" file (interface tuning), "article-style.css" file (articles presentation tuning) and some extra files (icons, fonts etc.).
 
