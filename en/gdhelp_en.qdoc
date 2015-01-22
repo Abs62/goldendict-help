@@ -48,6 +48,7 @@ GoldenDict supports \l {formats.html#formats}{local dictionaries}, \l {formats.h
 	\o Zim dictionaries (.zim)
 	\o MDict dictionaries (.mdx/.mdd)
 	\o Epwing dictionaries
+	\o Slob dictionaries (.slob)
 	\o \l {lsa_features}{ABBYY Lingvo sound archives} (.lsa/.dat)
 	\o \l {sounddirs_features}{Sound files in separate folders}
 	\o \l {zips_features}{Zips sound packs} (.zips)
@@ -119,7 +120,7 @@ Zips file size must not exceed 4 GB.
 
 Every local dictionary can have individual icon. BMP, PNG, JPG or ICO files can be used for this icon.
 
-For Babylon, StarDict, DictD, ABBYY Lingvo, AardDictionary, SDictionary, Zim, MDict, Lsa, Zips dictionaries such graphics file must be named by main dictionary file name
+For Babylon, StarDict, DictD, ABBYY Lingvo, AardDictionary, SDictionary, Zim, MDict, Lsa, Zips, Slob dictionaries such graphics file must be named by main dictionary file name
 and places beside one. That is if main file of your dictionary, for example, named "My_best_dictionary.dsl" therefore icon file must be named "My_best_dictionary.bmp" (.png, .jpg etc.).
 
 For Xdxf dictionaries icon file must be named "icon16.png" (for 16х16 images) or "icon32.png" (for 32х32 images) and placed into dictionary folder.
