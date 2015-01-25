@@ -48,7 +48,7 @@ GoldenDict supports \l {formats.html#formats}{local dictionaries}, \l {formats.h
 	\o Zim dictionaries (.zim)
 	\o MDict dictionaries (.mdx/.mdd)
 	\o Epwing dictionaries
-	\o Slob dictionaries (.slob)
+	\o \l {slob_features}{Slob dictionaries} (.slob)
 	\o \l {lsa_features}{ABBYY Lingvo sound archives} (.lsa/.dat)
 	\o \l {sounddirs_features}{Sound files in separate folders}
 	\o \l {zips_features}{Zips sound packs} (.zips)
@@ -95,28 +95,33 @@ Size of such archive must not exceed 4 GB.
 \section1 3. DictD, Xdxf
 Main file of DictD dictionary (.dict) or Xdxf dictionary (.xdxf) can be compressed by Dictzip program to reduce its size.
 
+\target slob_features
+\section1 4. Slob
+GoldenDict can render formulas in TeX format via \l {http://www.forkosh.com/mimetex.html}{Mimetex} program. 
+Just place "mimetex.cgi" file beside GoldenDict executable file.
+
 \target lsa_features
-\section1 4. ABBYY Lingvo sound archives
+\section1 5. ABBYY Lingvo sound archives
 
 ABBYY Lingvo sound archives are set of sound files packed into one file of some specific format.
 These files can be called directly from matches list or from dictionary articles.
 
 \target sounddirs_features
-\section1 5. Sound files in separate folders
+\section1 6. Sound files in separate folders
 
 The separate folder with sound files can be added into GoldenDict dictionaries list.
 GoldenDict will handle this folders like ABBYY Lingvo sound archives
 (inapplicable in \l{portable.html}{portable mode}).
 
 \target zips_features
-\section1 6. Zips sound packs
+\section1 7. Zips sound packs
 
 Zips sound pack is zip archive with extension ".zips" contains set of sound files. To create suck pack it needs to compress sound files into zip archive and change extension of this archive to ".zips".
 GoldenDict will handle such sound packs like ABBYY Lingvo sound archives.
 
 Zips file size must not exceed 4 GB.
 
-\section1 7. Individual dictionary icons
+\section1 8. Individual dictionary icons
 
 Every local dictionary can have individual icon. BMP, PNG, JPG or ICO files can be used for this icon.
 
@@ -130,7 +135,7 @@ For Epwing dictionaries icon file must be named by name of folder with dictionar
 If individual icon is not presented the default icon for this type of dictionaries will be used.
 
 \target common_features
-\section1 8. General notes
+\section1 9. General notes
 
 At every launch GoldenDict scan folders with dictionaries to create dictionaries list. The more files in these folder is the more time for scanning.
 Therefore it is recommended to compress dictionary resources into zip archives and to use Zips sound packs instead of sound files in separate folders.
