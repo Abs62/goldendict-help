@@ -633,7 +633,7 @@ To find characters '?', '*', '[' and ']' it should be escaped by backslash - '\\
 
 "Now indexing" - this line show name of currently indexed dictionary (it is may be dictionary not from current group).
 
-The dictionary indexing for full-text search going on in background mode and started immediately after program start. It can take a long time and require many RAM.
+The dictionary indexing for full-text search going on in background mode and started immediately after program start, name of the currently indexing dictionary is displayed in the status line. This process can take a long time and require many RAM.
 If RAM size is not enough to search the index dictionary the indexing process can crash. In such cases it is recommended to turn off indexing for huge dictionaries like Wikipedias or Wiktionaries.
 To find dictionary which can't be indexed start GoldenDict in \l{debug.html}{debug mode}.
 
