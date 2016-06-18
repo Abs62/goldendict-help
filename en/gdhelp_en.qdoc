@@ -231,6 +231,7 @@ If you add icon file name without path GoldenDict will search this file in confi
 
 Here you can add any website which allow to set target word in url. To add such site you should set it url with target word template, name for dictionaries list and set mark in "Enabled" column. 
 In the "Icon" column you can set custom icon for this site. If you add icon file name without path GoldenDict will search this file in configuration folder.
+"As link" column define method of article insertion into common page. If this option is set article will be inserted as link inside <iframe> tag (preferable mode). If articles are not loaded in this mode turn this option off, then articles will be inserted as html-code.
 
 Target word can be inserted into url in next encodings::
 \table
