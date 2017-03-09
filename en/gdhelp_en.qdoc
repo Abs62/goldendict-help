@@ -49,6 +49,7 @@ GoldenDict supports \l {formats.html#formats}{local dictionaries}, \l {formats.h
 	\o MDict dictionaries (.mdx/.mdd)
 	\o Epwing dictionaries
 	\o \l {slob_features}{Slob dictionaries} (.slob)
+	\o \l {gls_features}{Babylon source files} (.gls(.dz))
 	\o \l {lsa_features}{ABBYY Lingvo sound archives} (.lsa/.dat)
 	\o \l {sounddirs_features}{Sound files in separate folders}
 	\o \l {zips_features}{Zips sound packs} (.zips)
@@ -100,32 +101,38 @@ Main file of DictD dictionary (.dict) or Xdxf dictionary (.xdxf) can be compress
 GoldenDict can render formulas in TeX format via \l {http://www.forkosh.com/mimetex.html}{Mimetex} program. 
 Just place "mimetex.cgi" file beside GoldenDict executable file.
 
+\target gls_features
+\section1 5. GLS
+Main file of Babylon source dictionary must be in UTF-8 (or UTF-16 with BOM) encoding. It can be compressed by Dictzip program to reduce its size.  
+Golden Dict read from dictionary header "### Glossary title:", "### Author:", "### Description:", "### Source language:" and "### Target language:" fields only. 
+Dictionary header must be concluded with "### Glossary section:" mark.
+
 \target lsa_features
-\section1 5. ABBYY Lingvo sound archives
+\section1 6. ABBYY Lingvo sound archives
 
 ABBYY Lingvo sound archives are set of sound files packed into one file of some specific format.
 These files can be called directly from matches list or from dictionary articles.
 
 \target sounddirs_features
-\section1 6. Sound files in separate folders
+\section1 7. Sound files in separate folders
 
 The separate folder with sound files can be added into GoldenDict dictionaries list.
 GoldenDict will handle this folders like ABBYY Lingvo sound archives
 (inapplicable in \l{portable.html}{portable mode}).
 
 \target zips_features
-\section1 7. Zips sound packs
+\section1 8. Zips sound packs
 
 Zips sound pack is zip archive with extension ".zips" contains set of sound files. To create suck pack it needs to compress sound files into zip archive and change extension of this archive to ".zips".
 GoldenDict will handle such sound packs like ABBYY Lingvo sound archives.
 
 Zips file size must not exceed 4 GB.
 
-\section1 8. Individual dictionary icons
+\section1 9. Individual dictionary icons
 
 Every local dictionary can have individual icon. BMP, PNG, JPG or ICO files can be used for this icon.
 
-For Babylon, StarDict, DictD, ABBYY Lingvo, AardDictionary, SDictionary, Zim, MDict, Lsa, Zips, Slob dictionaries such graphics file must be named by main dictionary file name
+For Babylon, StarDict, DictD, ABBYY Lingvo, AardDictionary, SDictionary, Zim, MDict, Lsa, Zips, Slob, Gls dictionaries such graphics file must be named by main dictionary file name
 and places beside one. That is if main file of your dictionary, for example, named "My_best_dictionary.dsl" therefore icon file must be named "My_best_dictionary.bmp" (.png, .jpg etc.).
 
 For Xdxf dictionaries icon file must be named "icon16.png" (for 16х16 images) or "icon32.png" (for 32х32 images) and placed into dictionary folder.
@@ -135,7 +142,7 @@ For Epwing dictionaries icon file must be named by name of folder with dictionar
 If individual icon is not presented the default icon for this type of dictionaries will be used.
 
 \target common_features
-\section1 9. General notes
+\section1 10. General notes
 
 At every launch GoldenDict scan folders with dictionaries to create dictionaries list. The more files in these folder is the more time for scanning.
 Therefore it is recommended to compress dictionary resources into zip archives and to use Zips sound packs instead of sound files in separate folders.
@@ -500,6 +507,9 @@ icon article will be collapsed.
 
 Note: If only one article have found it will not be collapsed regardless of it size.
 \endlist
+
+\bold{Extra search via synonyms}.
+Turn this option on to enable extra articles search via synonym lists from Stardict, Babylon and GLS dictionaries.
 
 \chapter 6.8 Options adjustable via config file
 Some GoldenDict preferences can be changed only by manual editing of configuration file. This file have name "config" and located in GoldenDict configuration folder. You can
