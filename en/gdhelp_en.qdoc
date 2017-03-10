@@ -16,6 +16,7 @@
 	\o \l {debug.html}{10 Debug mode}
 	\o \l {cssfiles.html}{11 User styles}
 	\o \l {hotkeys.html}{12 Shortcuts}
+	\o \l {cmdline.html}{13 Command line switches}
 \endlist
 */
 
@@ -830,4 +831,25 @@ Besides the \l{options.html#6.3 Hotkeys}{global hotkeys} GoldenDict also support
 	\o F12
 	\o Inspector
 \endtable
+*/
+/*!
+\page cmdline.html
+\title 13 Command line switches
+Note: All switches are case-sensitive.
+\table
+\header
+	\o Switch
+	\o Action
+\row
+	\o --log-to-file
+	\o Turn on \l{debug.html}{debug mode}.
+\row
+	\o --group-name=name_of_group
+	\o Set "name_of_group" group of dictionaries as current for main window.
+\row
+	\o --popup-group-name=name_of_group
+	\o Set "name_of_group" group of dictionaries as current for popup window.
+\endtable
+Switches "--group-name" and "--popup-group-name" can affect to already loaded GoldenDict instance.
+Also command line can contain word which will be transferred to GoldenDict to translate.
 */
