@@ -13,10 +13,11 @@
 	\o \l {toolbar.html}{07 Toolbar}
 	\o \l {headwords.html}{08 Dictionary headwords}
 	\o \l {fulltextsearch.html}{09 Full-text search}
-	\o \l {debug.html}{10 Debug mode}
-	\o \l {cssfiles.html}{11 User styles}
-	\o \l {hotkeys.html}{12 Shortcuts}
-	\o \l {cmdline.html}{13 Command line switches}
+	\o \l {favorites.html}{10 Favorites}
+	\o \l {debug.html}{11 Debug mode}
+	\o \l {cssfiles.html}{12 User styles}
+	\o \l {hotkeys.html}{13 Shortcuts}
+	\o \l {cmdline.html}{14 Command line switches}
 \endlist
 */
 
@@ -193,10 +194,12 @@ Popup window controls
 
 6 - button to transfer word to main window. When it pressed the main GoldenDict window will be activated and translated word will be placed into it search line.
 
-7 - turn on/off dictionaries bar button. When it pressed the vertical toolbar with dictionary icons shown at right side of popup window. To exclude dictionary from search you can just release button with it icon
+7 - button to transfer word to Favorites
+
+8 - turn on/off dictionaries bar button. When it pressed the vertical toolbar with dictionary icons shown at right side of popup window. To exclude dictionary from search you can just release button with it icon
 on this toolbar. If dictionary bar is turned off such dictionary muting don't work.
 
-8 - pin button. When it pressed the popup window transform to ordinary application window and don't close when cursor moved away from it.
+9 - pin button. When it pressed the popup window transform to ordinary application window and don't close when cursor moved away from it.
 In this mode you can resize window as you want. The new size will be preserved for next launch of GoldenDict.
 */
 
@@ -353,6 +356,9 @@ Via "Group icon" list box you can select icon for current group. This icon will 
 
 In "Shortcut" line you can set hotkey to select this group. Just select this line and press shortcut keys.
 
+"Folder in Favorites" line allow to bind some Favorites folder to this group. Headwords opened in this group will be store in given Favorites folder. Respectively, headwords from given Favorites folder will be opened in this group. A nested folders is allowed, separator is "/" or "\\" character.
+ If given folder is absent in Favorites it will be created while first headword store from this group. If folder is not given then headwords from this group will be store in root folder of Favorites.
+
 Buttons:
 \table
 \row
@@ -494,6 +500,11 @@ a target application must can recognize such messages and reply to its. For exam
 	\o \bold{Save every ... minutes}. Here you can set the interval of saving history to file. If interval set to 0 history will be saved only when program will be closed. If GoldenDict will
 crash all not saved history records will be lost.
 \endlist
+\bold{Favorites}. Here you can tune GoldenDict Favorites.
+\list
+	\o \bold{Save every ... minutes}. Here you can set the interval of saving Favorites to file. If interval set to 0 the Favorites will be saved only when program will be closed. If GoldenDict will
+crash all changes since last save will be lost.
+\endlist
 
 \bold{Articles}. Here you can set some options for articles presentation.
 \list
@@ -559,7 +570,8 @@ GoldenDict toolbar can contain next elements:
 	\o 7 - Save article;
 	\o 8 - Print article;
 	\o 9 - Menu
-	\o 10 - Dictionaries bar.
+	\o 10 - Add to Favorites
+	\o 11 - Dictionaries bar.
 \endlist
 Elements 2 and 3 are presents in toolbar if search pane is disabled in "View" menu. Otherwise group list, search line and matches list combined in separate pane in main GoldenDict window.
 
@@ -575,7 +587,9 @@ The button 4 is presented in toolbar if the popup window is \l{options.html#6.2 
 
 The button 9 is presented in toolbar if the main menu is turned off via "View" menu.
 
-The dictionaries bar 10 contains icons (and names optionally) of all dictionaries from current dictionaries group. You can turn on/off search in these dictionaries by mouse click on dictionary icons.
+The button 10 add current tab to Favorites.
+
+The dictionaries bar 11 contains icons (and names optionally) of all dictionaries from current dictionaries group. You can turn on/off search in these dictionaries by mouse click on dictionary icons.
 If button with icon is in pressed state a corresponding dictionary is included in search, otherwise one is excluded. If you click dictionary icon with Ctrl of Shift key pressed the all other dictionaries will be disabled.
 The next click on this icon with Shift key pressed restore the previous dictionaries bar state, click with Ctrl key pressed enable all dictionaries.
 
@@ -651,17 +665,31 @@ To find dictionary which can't be indexed start GoldenDict in \l{debug.html}{deb
 
 When you place mouse cursor over headword in results list the tooltip with dictionaries list contains such articles matched the search conditions will be shown.
 */
+/*!
+\page favorites.html
+\title 10 Favorites
+Favorites in GoldenDict is a hierarchical structure of folders and headers in them. Folders can be bound to specific groups of dictionaries. The folder is bound to the group if it is specified in the settings of the corresponding group.
+The headwords opened in that group will be stored to this folder. Accordingly headwords from this folder will be opened in that group. If the folder is not bound to any group of dictionaries then headwords from it will be opened in the current group.
 
+Favorites allows you to create folders manually via context menu, to move/add items to them simply by dragging and dropping as well as to delete selected items via context menu or by pressing the "Del" key.
+
+In addition to adding and removing items to/from the Favorites you can perform the following operations via context menu or the main menu:
+\list
+	\o "Export" -  the Favorites contents will be exported to the specified XML file while preserving the entire structure.
+	\o "Export to plain list" - all headwords stored in the Favorites will be saved to the specified text file as plain list without saving the folder structure.
+	\o "Import" - the current contents of the Favorites will be replaced by the contents of the specified XML file.
+\endlist
+*/
 /*!
 \page debug.html
-\title 10 Debug mode
+\title 11 Debug mode
 To turn on debug mode launch GoldenDict with "--log-to-file" command line key. In this mode GoldenDict creates in configuration folder the "gd_log.txt" and store various warnings, errors and debug messages in it.
 If GoldenDict started without this key all messages will be output to console (under Linux and MacOS) or ignored (under Windows).
 */
 
 /*!
 \page cssfiles.html
-\title 11 User styles
+\title 12 User styles
 To change of dictionary articles presentation you can create the file with styles which will be used while articles output. Such file must be named "article-style.css" and placed in GoldenDict
 configuration folder beside the "config" file. The "article-style.css" is just style sheet file wrote in accordance with standard html style sheet \l{http://www.w3.org/Style/CSS/}{rules}.
 To see a class names used in articles you can call inspector via article context menu.
@@ -674,7 +702,7 @@ The examples of "article-style.css" and "qt-style.css" files you can find in \l{
 
 /*!
 \page hotkeys.html
-\title 12 Shortcuts
+\title 13 Shortcuts
 Besides the \l{options.html#6.3 Hotkeys}{global hotkeys} GoldenDict also support a number of shortcut usable inside program.
 \table
 \header
@@ -744,6 +772,9 @@ Besides the \l{options.html#6.3 Hotkeys}{global hotkeys} GoldenDict also support
 	\o Ctrl+D
 	\o Switch to dictionary headwords dialog (if it is open)
 \row
+	\o Ctrl+E
+	\o Add current tab to Favorites
+\row
 	\o Ctrl+F4
 	\o (Main window) minimize to system tray
 \row
@@ -754,7 +785,10 @@ Besides the \l{options.html#6.3 Hotkeys}{global hotkeys} GoldenDict also support
 	\o (In main and popup windows) search in page / (In dictionaries dialog) go to filter line
 \row
 	\o Ctrl+H
-	\o Show/hide history
+	\o Show/hide history pane
+\row
+	\o Ctrl+I
+	\o Show/hide Favorites pane
 \row
 	\o Ctrl+M
 	\o Show/hide main menu
@@ -834,7 +868,7 @@ Besides the \l{options.html#6.3 Hotkeys}{global hotkeys} GoldenDict also support
 */
 /*!
 \page cmdline.html
-\title 13 Command line switches
+\title 14 Command line switches
 Note: All switches are case-sensitive.
 \table
 \header
