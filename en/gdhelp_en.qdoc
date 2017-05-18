@@ -504,6 +504,7 @@ crash all not saved history records will be lost.
 \list
 	\o \bold{Save every ... minutes}. Here you can set the interval of saving Favorites to file. If interval set to 0 the Favorites will be saved only when program will be closed. If GoldenDict will
 crash all changes since last save will be lost.
+	\o \bold{Confirmation for items deletion}. If this option is set GoldenDict will ask confirmation for every operation of items deletion. Otherwise items will be deleted immediately.
 \endlist
 
 \bold{Articles}. Here you can set some options for articles presentation.
