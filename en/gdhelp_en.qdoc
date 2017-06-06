@@ -440,6 +440,11 @@ Note: This option don't affect \l{6.3 Hotkeys}{calling popup window by hotkey}.
 
 \bold{Send translated word to main window}. If this option is set the main GoldenDict window will be activated instead of popup window. The target word will be placed into search line of main window.
 
+\bold{Show scan flag when word is selected} (only under Linux X11). If this option is set the small icon window \inlineimage scanflag.png
+ will be shown instead of popup window. Click on this window will show popup window.
+
+Note: "Only show popup when all selected keys are kept pressed" and "Show scan flag when word is selected" options are mutually exclusive. Only one can be turned on in the same time.
+
 \chapter 6.3 Hotkeys
 \image opt3.png
 Here you can set hotkeys to call popup window and/or to show/hide the main window. Just select corresponding line and press keys. These hotkeys are global and works from other applications.
