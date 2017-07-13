@@ -94,6 +94,8 @@ This archive must be named on main dictionary file name (include extension) with
 
 Size of such archive must not exceed 4 GB.
 
+GoldenDict supports the "#SOUND_DICTIONARY" directive. Sounds missing in the resources of the dictionary will be searched first in the dictionary specified in this directive.
+
 \target xdxf_features
 \section1 3. DictD, Xdxf
 Main file of DictD dictionary (.dict) or Xdxf dictionary (.xdxf) can be compressed by Dictzip program to reduce its size.
@@ -201,6 +203,9 @@ on this toolbar. If dictionary bar is turned off such dictionary muting don't wo
 
 9 - pin button. When it pressed the popup window transform to ordinary application window and don't close when cursor moved away from it.
 In this mode you can resize window as you want. The new size will be preserved for next launch of GoldenDict.
+
+If popup window is pinned the \inlineimage ontop.png
+button appears beside pin button. When this button is pressed the window will stay over all other windows.
 */
 
 /*!
@@ -443,7 +448,7 @@ Note: This option don't affect \l{6.3 Hotkeys}{calling popup window by hotkey}.
 \bold{Show scan flag when word is selected} (only under Linux X11). If this option is set the small icon window \inlineimage scanflag.png
  will be shown instead of popup window. Click on this window will show popup window.
 
-Note: "Only show popup when all selected keys are kept pressed" and "Show scan flag when word is selected" options are mutually exclusive. Only one can be turned on in the same time.
+Note: "Only show popup when all selected keys are kept pressed" and "Show scan flag when word is selected" are mutually exclusive. Only one can be turned on in the same instant time.
 
 \chapter 6.3 Hotkeys
 \image opt3.png
