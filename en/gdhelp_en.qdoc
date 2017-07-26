@@ -666,6 +666,8 @@ To find characters '?', '*', '[' and ']' it should be escaped by backslash - '\\
 
 "Match case" - if this option is turned on the matches search will be completed in the case-sensitive mode, otherwise in case-insensitive mode.
 
+"Ignore words order" - if this option is enabled, the words specified in the search string will be searched in any order in dictionaries. Otherwise ones will be searched in the order stated in the search string.
+
 "Available dictionaries in group" - here you can view how many dictionaries in current group are suitable for full-text search, how many dictionaries already indexed and how many dictionaries wait for indexing.
 
 "Now indexing" - this line show name of currently indexed dictionary (it is may be dictionary not from current group).
