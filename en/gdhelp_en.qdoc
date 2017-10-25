@@ -196,7 +196,7 @@ Popup window controls
 
 6 - button to transfer word to main window. When it pressed the main GoldenDict window will be activated and translated word will be placed into it search line.
 
-7 - button to transfer word to Favorites
+7 - button to transfer word to Favorites (the icon will be blue if such word already presented in Favorites)
 
 8 - turn on/off dictionaries bar button. When it pressed the vertical toolbar with dictionary icons shown at right side of popup window. To exclude dictionary from search you can just release button with it icon
 on this toolbar. If dictionary bar is turned off such dictionary muting don't work.
@@ -562,6 +562,17 @@ clipboard content have changed.
 Allowed values: 0 - tracking is off, 1 - tracking is on.
 
 Default value: 0
+\row
+	\o maxHeadwordsToExpand
+	\o This parameter set maximum number of dictionary headwords when GoldenDict create additional index entries for multi-word headwords which allow to search such headwords via its middle words.
+Creating of the such entries simplify headwords search but require more memory for indexing. It is recommended to change this parameter only if some dictionary can't be indexed because
+lack of memory and only for indexing of this dictionary (and return parameter to default value after indexing). Value 0 means no limit.
+
+Note 1: This parameter affect indexing of the Aard, Slob, StarDict and Zim dictionaries.
+
+Note 2. This parameter don't affect already indexed dictionaries.
+
+Default value: 0 (no limit).
 \endtable
 Note: Before manual editing of the configuration file GoldenDict must be closed or all changes will be cancelled.
 */
