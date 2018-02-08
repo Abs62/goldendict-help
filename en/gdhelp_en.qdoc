@@ -591,8 +591,8 @@ GoldenDict toolbar can contain next elements:
 	\o 6 - Font scale buttons;
 	\o 7 - Save article;
 	\o 8 - Print article;
-	\o 9 - Menu
-	\o 10 - Add to Favorites
+	\o 9 - Add to Favorites;
+	\o 10 - Menu;
 	\o 11 - Dictionaries bar.
 \endlist
 Elements 2 and 3 are presents in toolbar if search pane is disabled in "View" menu. Otherwise group list, search line and matches list combined in separate pane in main GoldenDict window.
@@ -607,9 +607,9 @@ Note: The wildcard symbol at first position in word leads to full headwords list
 
 The button 4 is presented in toolbar if the popup window is \l{options.html#6.2 Scan popup}{enabled in preferences}.
 
-The button 9 is presented in toolbar if the main menu is turned off via "View" menu.
+The button 9 add current tab to Favorites.
 
-The button 10 add current tab to Favorites.
+The button 10 is presented in toolbar if the main menu is turned off via "View" menu.
 
 The dictionaries bar 11 contains icons (and names optionally) of all dictionaries from current dictionaries group. You can turn on/off search in these dictionaries by mouse click on dictionary icons.
 If button with icon is in pressed state a corresponding dictionary is included in search, otherwise one is excluded. If you click dictionary icon with Ctrl of Shift key pressed the all other dictionaries will be disabled.
