@@ -565,7 +565,7 @@ Default value: 0
 \row
 	\o maxHeadwordsToExpand
 	\o This parameter set maximum number of dictionary headwords when GoldenDict create additional index entries for multi-word headwords which allow to search such headwords via its middle words.
-Creating of the such entries simplify headwords search but require more memory for indexing. It is recommended to change this parameter only if some dictionary can't be indexed because
+Creating of the such entries simplify headwords search but require more memory for indexing. It is strongly recommended to change this parameter only if some dictionary can't be indexed because
 lack of memory and only for indexing of this dictionary (and return parameter to default value after indexing). Value 0 means no limit.
 
 Note 1: This parameter affect indexing of the Aard, Slob, StarDict and Zim dictionaries.
@@ -615,7 +615,10 @@ The dictionaries bar 11 contains icons (and names optionally) of all dictionarie
 If button with icon is in pressed state a corresponding dictionary is included in search, otherwise one is excluded. If you click dictionary icon with Ctrl of Shift key pressed the all other dictionaries will be disabled.
 The next click on this icon with Shift key pressed restore the previous dictionaries bar state, click with Ctrl key pressed enable all dictionaries.
 
-Note: If dictionaries bar is disabled such dictionaries enabling/disabling is not available.
+Note 1: If dictionaries bar is disabled such dictionaries enabling/disabling is not available.
+
+Note 2: Mouse click on dictionary name in the "Found in Dictionaries" pane with Alt key pressed is equal to simple mouse click on dictionary icon in the dictionaries bar.
+Same click with Ctrl of Shift key pressed is equal to click on dictionary icon in the dictionaries bar with same key pressed.
 */
 
 /*!
