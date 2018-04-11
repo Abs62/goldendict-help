@@ -464,7 +464,7 @@ Here you can set parameters for playback of sound files from dictionaries.
 
 \bold{Auto-pronounce words in scan popup}. If this options is set the first found pronunciation will be automatically played after articles loading to popup window. 
 
-\bold{Use internal player}. If this option is set the internal FFMpeg-based player will be used for playback.
+\bold{Use internal player}. If this option is set the internal player will be used for playback. You can choose FFMpeg-based engine or Qt Multimedia (only for Qt5-based GoldenDict).
 
 \bold{Use external program}. If this option is set the sound file to play will be transferred to specified application as command line parameter.
 
@@ -681,6 +681,8 @@ To find characters '?', '*', '[' and ']' it should be escaped by backslash - '\\
 "Match case" - if this option is turned on the matches search will be completed in the case-sensitive mode, otherwise in case-insensitive mode.
 
 "Ignore words order" - if this option is enabled, the words specified in the search string will be searched in any order in dictionaries. Otherwise ones will be searched in the order stated in the search string.
+
+"Ignore diacritics" - if this option is enabled, the diacritic symbols will be searched as its base ones.
 
 "Available dictionaries in group" - here you can view how many dictionaries in current group are suitable for full-text search, how many dictionaries already indexed and how many dictionaries wait for indexing.
 
