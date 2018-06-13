@@ -529,6 +529,7 @@ icon in "From dictionary..." heading above article text. When you press this ico
 icon article will be collapsed.
 
 Note: If only one article have found it will not be collapsed regardless of it size.
+	\o \bold{Ignore diacritics while search}. If this option is set GoldenDict will ignore diacritics in headwords while articles search. This option affect the  \l {formats.html#formats}{local dictionaries} only.
 \endlist
 
 \bold{Extra search via synonyms}.
