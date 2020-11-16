@@ -530,6 +530,7 @@ icon article will be collapsed.
 
 Note: If only one article have found it will not be collapsed regardless of it size.
 	\o \bold{Ignore diacritics while search}. If this option is set GoldenDict will ignore diacritics in headwords while articles search. This option affect the  \l {formats.html#formats}{local dictionaries} only.
+	\o \bold{Ignore input phrases longer than ... symbols}. If this option is set GoldenDict will ignore text longer than presented length. This option affect the text transmitted via mouse-over, selection, clipboard or command line.
 \endlist
 
 \bold{Extra search via synonyms}.
