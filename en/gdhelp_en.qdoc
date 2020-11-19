@@ -479,6 +479,10 @@ Here you can set GoldenDict network parameters.
 
 \bold{Don't identify GoldenDict in HTTP headers}. If this option is set GoldenDict will don't identify itself via HTTP headers. It usable if some website block requests from GoldenDict.
 
+\bold{Maximum network cache size}. Maximum disk space occupied by GoldenDict's network cache. If set to 0 the network disk cache will be disabled.
+
+\bold{Clear network cache on exit}. When this option is enabled, GoldenDict clears its network cache from disk during exit.
+
 \bold{Check for new program releases periodically}. If this option is set GoldenDict will periodically check the new release presence on goldendict.org site. Check interval is 2 days (or 2 hours if site now is inaccessible).
 
 \chapter 6.6 Full-text search
