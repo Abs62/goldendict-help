@@ -913,12 +913,18 @@ Note: All switches are case-sensitive.
 	\o --log-to-file
 	\o Turn on \l{debug.html}{debug mode}.
 \row
+	\o --toggle-scan-popup
+	\o Toggle scanning mode on/off.
+\row
 	\o --group-name=name_of_group
 	\o Set "name_of_group" group of dictionaries as current for main window.
 \row
 	\o --popup-group-name=name_of_group
 	\o Set "name_of_group" group of dictionaries as current for popup window.
 \endtable
-Switches "--group-name" and "--popup-group-name" can affect to already loaded GoldenDict instance.
+The switches \c --toggle-scan-popup, \c --group-name and \c --popup-group-name affect both new and running GoldenDict instance.
+
+Assigning a global keyboard shortcut to the \c {goldendict --toggle-scan-popup} command in system preferences emulates a scanning mode-toggling global hotkey.
+
 Also command line can contain word which will be transferred to GoldenDict to translate.
 */
