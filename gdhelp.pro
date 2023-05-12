@@ -3,8 +3,13 @@ TEMPLATE = aux
 GENERATOR = $$[QT_INSTALL_BINS]/qhelpgenerator
 QDOC = $$[QT_INSTALL_BINS]/qdoc3
 
-!exists( $$QDOC ) {
-  QDOC = $$QDOC-qt4
+unix {
+  !exists( $$QDOC ) {
+    QDOC = $$QDOC-qt4
+  }
+} else {
+  GENERATOR = $$replace( GENERATOR, \\\\, / )
+  QDOC= $$replace( QDOC, \\\\, / )
 }
 
 docs.depends = $$PWD/ru/gdhelp_ru.qdoc $$PWD/en/gdhelp_en.qdoc
