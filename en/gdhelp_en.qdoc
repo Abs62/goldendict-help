@@ -910,6 +910,9 @@ Note: All switches are case-sensitive.
 	\o Switch
 	\o Action
 \row
+	\o -h, --help
+	\o Show command-line help and exit.
+\row
 	\o --log-to-file
 	\o Turn on \l{debug.html}{debug mode}.
 \row
@@ -924,7 +927,8 @@ Note: All switches are case-sensitive.
 \endtable
 The switches \c --toggle-scan-popup, \c --group-name and \c --popup-group-name affect both new and running GoldenDict instance.
 
-Assigning a global keyboard shortcut to the \c {goldendict --toggle-scan-popup} command in system preferences emulates a scanning mode-toggling global hotkey.
+Assigning a global keyboard shortcut to the \c {goldendict --toggle-scan-popup} command in system preferences emulates a scanning-mode-toggling global hotkey.
 
-Also command line can contain word which will be transferred to GoldenDict to translate.
+The command line can also contain a word, a quoted phrase or an URI to translate in GoldenDict.
+Supported URI syntax: \c {"[golden]dict://[/]word or phrase to translate[/]"}
 */
